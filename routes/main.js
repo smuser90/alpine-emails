@@ -64,27 +64,27 @@ router.post('/email', cors(), function(req, res) {
     }
 
 
-    console.log('attempting to send email');
+    console.log('No longer attempting to send email to reporter');
 
     // send mail with defined transport object
-    transporter1.sendMail(mailOptions, function(error, info) {
-        console.log('info is: ' + info);
-        if (error) {
-            console.log('we got an error' + error);
-            res.json('error', {
-                error: 'failed to send email'
-            });
+//     transporter1.sendMail(mailOptions, function(error, info) {
+//         console.log('info is: ' + info);
+//         if (error) {
+//             console.log('we got an error' + error);
+//             res.json('error', {
+//                 error: 'failed to send email'
+//             });
 
-        } else {
-            console.log('bug report submitted successfully');
-            res.json({
-                success: true
-            });
+//         } else {
+//             console.log('bug report submitted successfully');
+//             res.json({
+//                 success: true
+//             });
 
-            sendEmailBackToReporter(req.body);
-        }
-        transporter1.close();
-    });
+//             sendEmailBackToReporter(req.body);
+//         }
+//         transporter1.close();
+//     });
 });
 
 function sendEmailBackToReporter(options) {
