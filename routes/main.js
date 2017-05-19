@@ -80,8 +80,8 @@ router.post('/email', cors(), function(req, res) {
             res.json({
                 success: true
             });
-
-            sendEmailBackToReporter(req.body);
+            console.log('Spoofing the sending ');
+//             sendEmailBackToReporter(req.body);
         }
         transporter1.close();
     });
